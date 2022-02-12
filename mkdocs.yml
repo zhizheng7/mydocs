@@ -1,5 +1,5 @@
 theme:
   name: material
-
+  nav_style: dark
 
 site_name: My Docs
