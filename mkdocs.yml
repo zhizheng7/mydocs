@@ -1,5 +1,15 @@
 theme:
   name: material
   nav_style: dark
+extra_css:
+  - css/mytable.css
+extra_javascript:
+  - js/table.js
+  - js/papaparse.min.js
 
 site_name: My Docs
+
+nav:
+  - home: index.md
+  - tables: table3.md
+  - csv-tables: csvtable.md
