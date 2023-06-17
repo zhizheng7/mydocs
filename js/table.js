@@ -32,7 +32,7 @@ function generateTableFromJson(jsonData) {
 
 
 function updateCSVTable(tablediv, csvfilename) {
-  fetch('/table/' + csvfilename)
+  fetch('table/' + csvfilename)
     .then(response => response.text())
     .then(data => {
       const parsedData = Papa.parse(data, { header: true}).data;
