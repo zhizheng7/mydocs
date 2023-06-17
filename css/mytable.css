@@ -1,0 +1,14 @@
+/* Example CSS styles for the table */
+#data-table {
+  border: 0px solid #ddd;
+  border-collapse: collapse;
+}
+
+#data-table th {
+  background-color: #f2f2f2;
+  padding: 10px;
+}
+
+#data-table td {
+  padding: 8px;
+}
