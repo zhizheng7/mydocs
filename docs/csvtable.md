@@ -2,11 +2,11 @@
 
 ## Table One
 
-<div id="data-table-1"></div>
+<div id="data-table-1" class="cipam-table"></div>
 
 ## Table Two
 
-<div id="data-table-2"></div>
+<div id="data-table-2" class="cipam-table"></div>
 
 
 <script>

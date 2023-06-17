@@ -2,7 +2,7 @@
 
 ## Dynamic Table
 
-<div id="data-table"></div>
+<div id="data-table" class="cipam-table"></div>
 
 <script>
 

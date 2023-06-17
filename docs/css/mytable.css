@@ -5,10 +5,35 @@
 }
 
 #data-table th {
-  background-color: #f2f2f2;
+  background-color: #88b7bf;
   padding: 10px;
 }
 
 #data-table td {
   padding: 8px;
+}
+
+
+.cipam-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.cipam-table th,
+.cipam-table td {
+  padding: 8px;
+  text-align: left;
+  border: 1px solid #ccc;
+}
+
+.cipam-table th {
+  background-color: #88b7bf;
+}
+
+.cipam-table tr:nth-child(even) {
+  background-color: #fafeeaf6;
+}
+
+.cipam-table tr:hover {
+  background-color: #e8e8e8;
 }
