@@ -6,7 +6,7 @@
 
 <script>
 
-fetch('table/data.json')
+fetch('../table/data.json')
   .then(response => response.json())
   .then(data => {
     const table = generateTableFromJson(data);
