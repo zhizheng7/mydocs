@@ -48,3 +48,40 @@ function updateCSVTable(tablediv, csvfilename) {
 
   return;
 }
+
+
+
+function loadDynamicTable(tableId, csvPath) {
+  const table = document.getElementById(tableId);
+
+  // Load the CSV data dynamically
+  fetch(csvPath)
+    .then(function(response) {
+      return response.text();
+    })
+    .then(function(data) {
+      // Parse the CSV data
+      const rows = Papa.parse(data, { header: true }).data;
+
+      // Create the table body
+      const tbody = document.createElement('tbody');
+      rows.forEach(function(row) {
+        const tr = document.createElement('tr');
+        Object.values(row).forEach(function(value) {
+          const td = document.createElement('td');
+          td.textContent = value;
+          tr.appendChild(td);
+        });
+        tbody.appendChild(tr);
+      });
+
+      // Replace the existing table body with the dynamic data
+      table.replaceChild(tbody, table.tBodies[0]);
+
+      // Initialize tablesort on the updated table
+      new Tablesort(table);
+    })
+    .catch(function(error) {
+      console.error('Error loading CSV:', error);
+    });
+}

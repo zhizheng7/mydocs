@@ -5,9 +5,17 @@ extra_css:
   - css/mytable.css
 extra_javascript:
   - js/table.js
-  - js/papaparse.min.js
+#  - js/papaparse.min.js
+#  - js/tablesort.js
+  - https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js
+  - https://cdn.jsdelivr.net/npm/papaparse@5.3.0/papaparse.min.js
+
 
 site_name: My Docs
+
+markdown_extensions:
+  - tables
+
 
 nav:
   - home: index.md
