@@ -85,3 +85,41 @@ function loadDynamicTable(tableId, csvPath) {
       console.error('Error loading CSV:', error);
     });
 }
+
+
+function loadDynamicTableJson(tableId, jsonPath) {
+  const table = document.getElementById(tableId);
+
+  // Load the JSON data dynamically
+  fetch(jsonPath)
+    .then(function(response) {
+      return response.json();
+    })
+    .then(function(data) {
+      // Create the table body
+      const tbody = document.createElement('tbody');
+      data.forEach(function(item) {
+        const tr = document.createElement('tr');
+        Object.values(item).forEach(function(value) {
+          const td = document.createElement('td');
+          td.textContent = value;
+          tr.appendChild(td);
+        });
+        tbody.appendChild(tr);
+      });
+
+      // Replace the existing table body with the dynamic data
+      table.replaceChild(tbody, table.tBodies[0]);
+
+      // Initialize tablesort on the updated table
+      new Tablesort(table);
+    })
+    .catch(function(error) {
+      console.error('Error loading JSON:', error);
+    });
+}
+
+// Usage example:
+//loadDynamicTableJson('table1', 'path/to/table1.json');
+//loadDynamicTableJson('table2', 'path/to/table2.json');
+
